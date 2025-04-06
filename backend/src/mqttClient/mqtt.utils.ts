@@ -58,3 +58,23 @@ export const getLogs = (topic: string, message: Buffer) => {
     inspect(formattedRes, true, null, true)
   );
 };
+
+export const getParsedContent = (
+  topic: string,
+  message: Buffer,
+): { parsed: any | null, raw: any } => {
+  const raw = getDatafromMessage(message);
+
+  if (!raw?.content) {
+    console.warn(`[getParsedContent] Missing content field in message from topic "${topic}"`, raw);
+    return { parsed: null, raw };
+  }
+
+  try {
+    const parsed = JSON.parse(raw.content);
+    return { parsed, raw };
+  } catch (e) {
+    console.warn(`[getParsedContent] Failed to parse content in message from topic "${topic}"`, e, raw);
+    return { parsed: null, raw };
+  }
+};
