@@ -16,7 +16,7 @@ import {
 import { CHANGE_MOP_REMINDER_EVENT, RELOCATE_SUCCESS_EVENT } from './commands/event.type';
 import { decompressLZMA } from './map/LZMA.utils';
 import { parseTracePoints, VacuumMap } from './map/map';
-import { getDatafromMessage, getLogs, isTopic } from './mqtt.utils';
+import { getDatafromMessage, getLogs, isTopic, getParsedContent } from './mqtt.utils';
 import { formatStringSubset } from './subset.utils';
 import { Maybe } from './types';
 
@@ -112,21 +112,10 @@ const mqttClient = () => {
     }
 
     if (isTopic('onFwBuryPoint', topic)) {
-      const res = getDatafromMessage(message);
+      const { parsed, raw } = getParsedContent(topic, message);
+      if (!parsed) return;
 
-      let parsedContent;
-      try {
-        if (res?.content) {
-          parsedContent = JSON.parse(res.content);
-        } else {
-          console.warn(`[onFwBuryPoint] Missing content field`, res);
-        }
-      } catch (e) {
-        console.warn(`[onFwBuryPoint] Failed to parse content`, e, res);
-        return;
-      }
-
-      if (parsedContent?.d?.body?.data?.d_val?.act === 'online') {
+      if (parsed?.d?.body?.data?.d_val?.act === 'online') {
         const splittedTopic = topic.split('/');
         botInfo.info = {
           ready: true,
@@ -137,6 +126,7 @@ const mqttClient = () => {
         console.log('Bot is ready!!', botInfo.info);
       }
     }
+
     if (isTopic('onEvt', topic)) {
       const res = getDatafromMessage(message);
       // console.log('onEvt ', inspect(res, false, null, true));
