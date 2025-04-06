@@ -113,10 +113,20 @@ const mqttClient = () => {
 
     if (isTopic('onFwBuryPoint', topic)) {
       const res = getDatafromMessage(message);
-      const parsedContent = JSON.parse(res.content);
+
+      let parsedContent;
+      try {
+        if (res?.content) {
+          parsedContent = JSON.parse(res.content);
+        } else {
+          console.warn(`[onFwBuryPoint] Missing content field`, res);
+        }
+      } catch (e) {
+        console.warn(`[onFwBuryPoint] Failed to parse content`, e, res);
+        return;
+      }
 
       if (parsedContent?.d?.body?.data?.d_val?.act === 'online') {
-        //TODO Delay some command after this trigger
         const splittedTopic = topic.split('/');
         botInfo.info = {
           ready: true,
@@ -127,7 +137,6 @@ const mqttClient = () => {
         console.log('Bot is ready!!', botInfo.info);
       }
     }
-
     if (isTopic('onEvt', topic)) {
       const res = getDatafromMessage(message);
       // console.log('onEvt ', inspect(res, false, null, true));
