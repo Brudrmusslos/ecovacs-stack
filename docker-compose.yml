@@ -1,9 +1,7 @@
 version: '3'
 
-networks:
-  ecovacs_stack:
-    internal: true
 services:
+
   mysql:
     image: mysql:latest
     ports:
@@ -13,10 +11,10 @@ services:
       - MYSQL_USER=dev
       - MYSQL_PASSWORD=dev
       - MYSQL_DATABASE=dev
-      - TZ=America/New_York
+      - TZ=Europe/Zurich
     networks:
       ecovacs_stack:
-      default:
+      ecovacs:
     volumes:
       - ./mysql/data:/var/lib/mysql
       - ./mysql/mysql.conf.d:/etc/mysql/conf.d
@@ -29,20 +27,22 @@ services:
     build:
       context: ./backend
       dockerfile: Dockerfile
+      network: host
     networks:
       ecovacs_stack:
-      default:
+      ecovacs:
     volumes:
       - ./backend:/opt/app
 # bash complaied about UID being readonly shell variable, used below instead
     user: '${REAL_UID}:${REAL_GID}'
     environment:
+      - NODE_EXTRA_CA_CERTS=/usr/local/share/ca-certificates/mkcert-root.crt
       - BASE_URL=https://localhost
       - BASE_URL_01=https://ecovacs.com
       - MYSQL_USER=dev
       - MYSQL_PASSWORD=dev
       - MYSQL_DATABASE=dev
-      - TZ=America/New_York
+      - TZ=Europe/Zurich
     command: bash -c './generate_certs.sh && yarn install && yarn run dev'
     stdin_open: true
     restart: unless-stopped
@@ -57,7 +57,7 @@ services:
       - 3000:3000
       - 8070:80
     networks:
-      default:
+      ecovacs:
       ecovacs_stack:
     volumes:
       - /etc/timezone:/etc/timezone:ro
@@ -71,12 +71,13 @@ services:
     build:
       context: ./frontend
       dockerfile: Dockerfile
+      network: host
     user: '${REAL_UID}:${REAL_GID}'
     environment:
       - WDS_SOCKET_PORT=0
-      - TZ=America/New_York
+      - TZ=Europe/Zurich
     networks:
-      default:
+      ecovacs:
     volumes:
       - ./frontend:/opt/app
     ports:
@@ -84,3 +85,19 @@ services:
     command: bash -c 'yarn install && yarn start'
     stdin_open: true
     restart: unless-stopped
+
+networks:
+    ecovacs:
+      name: "ecovacs"
+      driver: bridge
+      driver_opts:
+        com.docker.network.bridge.name: "net1"
+        com.docker.network.bridge.host_binding_ipv4: "10.100.10.21"
+      ipam:
+        driver: default
+        config:
+          - subnet: 10.100.81.0/24
+            ip_range: 10.100.81.0/24
+            gateway: 10.100.81.1
+    ecovacs_stack:
+      internal: true
