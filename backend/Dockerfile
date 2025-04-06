@@ -1,5 +1,7 @@
 FROM node:20-alpine
-
+#ARG BASE_URL
+#ARG BASE_URL_01
+# Install needed tools and build dependencies
 RUN apk --no-cache add \
     bash curl wget build-base g++ \
     cairo-dev jpeg-dev pango-dev giflib-dev \
@@ -8,10 +10,11 @@ RUN apk --no-cache add \
     nss \
     && update-ca-certificates
 
+# Allow sudo for the node user
 RUN echo "node ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/node \
     && chmod 0440 /etc/sudoers.d/node
 
-# Install mkcert
+# Install mkcert and setup CA
 RUN curl -s https://api.github.com/repos/FiloSottile/mkcert/releases/latest \
     | grep browser_download_url \
     | grep linux-amd64 \
@@ -19,16 +22,27 @@ RUN curl -s https://api.github.com/repos/FiloSottile/mkcert/releases/latest \
     | wget -qi - \
     && mv mkcert-v*-linux-amd64 mkcert \
     && chmod +x mkcert \
-    && mv mkcert /usr/local/bin/
-
-# Install CA certs system-wide
-RUN mkcert -install \
+    && mv mkcert /usr/local/bin/ \
+    && mkcert -install \
     && cp "$(mkcert -CAROOT)/rootCA.pem" /usr/local/share/ca-certificates/mkcert-root.crt \
     && chmod 644 /usr/local/share/ca-certificates/mkcert-root.crt \
     && update-ca-certificates
 
-# Optional but safe: export again
 ENV NODE_EXTRA_CA_CERTS="/usr/local/share/ca-certificates/mkcert-root.crt"
 
-USER node
+# Create app directory
 WORKDIR /opt/app
+
+# Copy package.json and install deps early (to leverage cache)
+COPY --chown=node:node package.json yarn.lock ./
+RUN yarn install
+
+# Copy full source and generate certs
+COPY --chown=node:node . .
+
+# Create certs during build
+#RUN bash ./generate_certs.sh
+
+USER node
+
+CMD ["yarn", "run", "dev"]
