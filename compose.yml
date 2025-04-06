@@ -28,6 +28,8 @@ services:
       context: ./backend
       dockerfile: Dockerfile
       network: host
+      tags:
+        - "${REGISTRY}/backend"
     networks:
       ecovacs_stack:
       ecovacs:
@@ -72,6 +74,8 @@ services:
       context: ./frontend
       dockerfile: Dockerfile
       network: host
+      tags:
+        - "${REGISTRY}/frontend"
     user: '${REAL_UID}:${REAL_GID}'
     environment:
       - WDS_SOCKET_PORT=0
