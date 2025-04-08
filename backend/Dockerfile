@@ -1,6 +1,5 @@
 FROM node:20-alpine
-#ARG BASE_URL
-#ARG BASE_URL_01
+
 # Install needed tools and build dependencies
 RUN apk --no-cache add \
     bash curl wget build-base g++ \
@@ -40,9 +39,7 @@ RUN yarn install
 # Copy full source and generate certs
 COPY --chown=node:node . .
 
-# Create certs during build
-#RUN bash ./generate_certs.sh
-
 USER node
 
+ENTRYPOINT ["./entrypoint.sh"]
 CMD ["yarn", "run", "dev"]

@@ -1,5 +1,5 @@
 #!/bin/bash
-set -ex
+set -e
 
 # this should execute every time as repo does provide ssl.crt and ssl.key files but not chain nor ca
 #~ if [ ! -f ./ssl.crt ]; then

@@ -1,7 +1,7 @@
 services:
 
   mysql:
-    container_name: backend
+    container_name: mysql
     image: mysql:latest
     ports:
       - 3306:3306
@@ -30,15 +30,10 @@ services:
       network: host
       tags:
         - "${REGISTRY}/backend"
-#      args:
-#        BASE_URL: https://localhost
-#        BASE_URL_01: https://ecovacs.com
-#    container_name: backend
+    container_name: backend
     networks:
       ecovacs_stack:
       ecovacs:
-#    volumes:
-#      - ./backend:/opt/app
 # bash complaied about UID being readonly shell variable, used below instead
     user: '${REAL_UID}:${REAL_GID}'
     environment:
@@ -49,10 +44,9 @@ services:
       - MYSQL_PASSWORD=dev
       - MYSQL_DATABASE=dev
       - TZ=Europe/Zurich
-    command: bash -c './generate_certs.sh && yarn run dev'
-#    command: bash -c './generate_certs.sh && yarn install && yarn run dev'
-#    stdin_open: true
     restart: unless-stopped
+    stdin_open: true
+
 
   nginx:
     container_name: nginx
@@ -73,6 +67,7 @@ services:
       - ./nginx/:/etc/nginx:ro
     restart: unless-stopped
 
+
   frontend:
     depends_on:
       - nginx
@@ -89,13 +84,11 @@ services:
       - TZ=Europe/Zurich
     networks:
       ecovacs:
-#    volumes:
-#      - ./frontend:/opt/app
     ports:
       - 4200:3000
-#    command: bash -c 'yarn install && yarn start'
-#    stdin_open: true
+    stdin_open: true
     restart: unless-stopped
+
 
 networks:
     ecovacs:
