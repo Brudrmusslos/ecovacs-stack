@@ -1,0 +1,54 @@
+services:
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile.dev
+      network: host
+      tags:
+        - "${REGISTRY}/frontend"
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    container_name: frontend
+    user: '${REAL_UID}:${REAL_GID}'
+    environment:
+      - WDS_SOCKET_PORT=0
+      - TZ=Europe/Zurich
+      - CHOKIDAR_USEPOLLING=true
+      - REACT_APP_HOST_IP=10.100.10.21
+    networks:
+      ecovacs:
+    ports:
+      - 4200:3000
+    stdin_open: true
+    tty: true
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile.dev
+      network: host
+      tags:
+        - "${REGISTRY}/backend"
+    volumes:
+      - ./backend:/app
+      - /app/node_modules
+    container_name: backend
+    networks:
+      ecovacs_stack:
+      ecovacs:
+# bash complaied about UID being readonly shell variable, used below instead
+    user: '${REAL_UID}:${REAL_GID}'
+    environment:
+      - NODE_EXTRA_CA_CERTS=/usr/local/share/ca-certificates/mkcert-root.crt
+      - BASE_URL=https://localhost
+      - BASE_URL_01=https://ecovacs.com
+      - MYSQL_USER=dev
+      - MYSQL_PASSWORD=dev
+      - MYSQL_DATABASE=dev
+      - TZ=Europe/Zurich
+      - NODE_ENV=development
+    restart: unless-stopped
+    stdin_open: true
+    depends_on:
+      - mysql
