@@ -31,7 +31,7 @@ services:
       tags:
         - "${REGISTRY}/backend"
     volumes:
-      - ./backend:/app
+      - ./backend:/opt/app
       - /app/node_modules
     container_name: backend
     networks:

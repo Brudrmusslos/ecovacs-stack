@@ -1,10 +1,43 @@
-FROM node:18
+FROM node:22
 
-WORKDIR /app
+# Install needed tools and build dependencies
+RUN apt update && apt install -y --no-install-recommends \
+    bash curl wget build-essential \
+    libcairo2-dev libjpeg-dev libpango1.0-dev libgif-dev \
+    grep sudo ca-certificates libnss3 \
+ && update-ca-certificates \
+ && rm -rf /var/lib/apt/lists/*
+
+# Allow sudo for the node user
+RUN echo "node ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/node \
+ && chmod 0440 /etc/sudoers.d/node
+
+# Install mkcert and setup CA
+RUN curl -s https://api.github.com/repos/FiloSottile/mkcert/releases/latest \
+ | grep browser_download_url \
+ | grep linux-amd64 \
+ | cut -d '"' -f 4 \
+ | wget -qi - \
+ && mv mkcert-v*-linux-amd64 mkcert \
+ && chmod +x mkcert \
+ && mv mkcert /usr/local/bin/ \
+ && mkcert -install \
+ && cp "$(mkcert -CAROOT)/rootCA.pem" /usr/local/share/ca-certificates/mkcert-root.crt \
+ && chmod 644 /usr/local/share/ca-certificates/mkcert-root.crt \
+ && update-ca-certificates
+
+ENV NODE_EXTRA_CA_CERTS="/usr/local/share/ca-certificates/mkcert-root.crt"
+
+WORKDIR /opt/app
 
 COPY package.json yarn.lock ./
+RUN corepack enable && corepack prepare yarn@4.8.1 --activate
 RUN yarn install
 
-COPY . .
+#COPY . .
 
+#COPY entrypoint.sh ./
+#RUN chmod +x entrypoint.sh
+
+ENTRYPOINT ["./entrypoint.sh"]
 CMD ["yarn", "dev"]

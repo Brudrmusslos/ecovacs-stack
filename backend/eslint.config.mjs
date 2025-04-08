@@ -50,11 +50,11 @@ export default defineConfig([
       "@typescript-eslint/no-unused-vars": ["error", { argsIgnorePattern: "^_" }],
       "@typescript-eslint/no-explicit-any": "error",
       "@typescript-eslint/no-inferrable-types": "warn",
-      "@typescript-eslint/ban-types": ["error", {
-        types: {
-          "{}": false
-        }
-      }],
+      //"@typescript-eslint/ban-types": ["error", {
+        //types: {
+          //"{}": false
+        //}
+      //}],
       "unicorn/filename-case": ["off", { case: "camelCase" }]
     }
   }

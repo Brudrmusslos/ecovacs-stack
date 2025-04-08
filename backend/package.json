@@ -1,9 +1,8 @@
 {
   "name": "app",
   "version": "1.0.0",
-  "type": "module",
   "scripts": {
-    "dev": "ts-node-dev --exit-child src/index.ts",
+    "dev": "ts-node-dev --require tsconfig-paths/register --exit-child src/index.ts",
     "start": "ts-node src/index.ts",
     "eslint": "eslint",
     "eslint:fix": "eslint --fix",
@@ -18,7 +17,8 @@
     "microtime": "^3.1.1",
     "mqtt": "^5.10.4",
     "mysql2": "^3.14.0",
-    "socket.io": "^4.8.1"
+    "socket.io": "^4.8.1",
+    "tsconfig-paths": "^4.2.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.1",
