@@ -1,36 +1,48 @@
 {
   "name": "app",
   "version": "1.0.0",
+  "type": "module",
   "scripts": {
     "dev": "ts-node-dev --exit-child src/index.ts",
     "start": "ts-node src/index.ts",
-    "eslint": "eslint 'src/**/*.ts'",
-    "eslint:fix": "eslint --fix 'src/**/*.ts'"
+    "eslint": "eslint",
+    "eslint:fix": "eslint --fix",
+    "unused": "ts-unused-exports tsconfig.json"
   },
   "license": "MIT",
-  "devDependencies": {
-    "@types/lzma-native": "^4.0.1",
-    "@types/microtime": "^2.1.0",
-    "@types/node": "^18.11.8",
-    "@typescript-eslint/eslint-plugin": "^5.49.0",
-    "@typescript-eslint/parser": "^5.49.0",
-    "eslint": "^8.32.0",
-    "eslint-config-airbnb": "^19.0.4",
-    "eslint-config-prettier": "^8.6.0",
-    "eslint-plugin-prettier": "^4.2.1",
-    "prettier": "^2.8.3",
-    "ts-node": "^10.9.1",
-    "ts-node-dev": "^2.0.0",
-    "typescript": "^4.9.4"
-  },
   "dependencies": {
-    "aedes": "^0.48.0",
-    "canvas": "^2.11.0",
-    "dotenv": "^16.0.1",
+    "aedes": "^0.51.3",
+    "canvas": "^3.1.0",
+    "dotenv": "^16.4.7",
     "lzma-native": "^8.0.6",
     "microtime": "^3.1.1",
-    "mqtt": "^4.3.7",
-    "mysql2": "^3.0.1",
-    "socket.io": "^4.5.4"
-  }
+    "mqtt": "^5.10.4",
+    "mysql2": "^3.14.0",
+    "socket.io": "^4.8.1"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3.3.1",
+    "@eslint/js": "^9.24.0",
+    "@types/lzma-native": "^4.0.4",
+    "@types/microtime": "^2.1.2",
+    "@types/node": "^22.14.0",
+    "@typescript-eslint/eslint-plugin": "^8.29.1",
+    "@typescript-eslint/parser": "^8.29.1",
+    "eslint": "^9.24.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^10.1.1",
+    "eslint-import-resolver-node": "^0.3.9",
+    "eslint-import-resolver-typescript": "^4.3.2",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-prettier": "^5.2.6",
+    "eslint-plugin-unicorn": "^58.0.0",
+    "globals": "^16.0.0",
+    "prettier": "^3.5.3",
+    "ts-node": "^10.9.2",
+    "ts-node-dev": "^2.0.0",
+    "ts-unused-exports": "^11.0.1",
+    "tslint-to-eslint-config": "^2.14.3",
+    "typescript": "^5.8.3"
+  },
+  "packageManager": "yarn@4.8.1"
 }

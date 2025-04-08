@@ -13,7 +13,7 @@ export const getMapSet = (mid: string, type: MapSubSetType = 'ar') => {
 };
 
 export const getMapTrace = (traceStart: number) => {
-  //TODO make some test, but this is the limit used by the app.
+  // TODO make some test, but this is the limit used by the app.
   const pointCount = 200;
 
   const command: BotCommand = {
@@ -69,8 +69,8 @@ export const getMinorMap = (pieceID: number, { mid, type }: MajorMap) => {
     name: 'getMinorMap',
     payload: {
       pieceIndex: pieceID,
-      mid: mid,
-      type: type,
+      mid,
+      type,
       bdTaskID: get16LengthId(),
     },
   };
@@ -102,7 +102,7 @@ export const getSingleInfo = (commandsName: BotCommandName) => {
 };
 
 export const getInfo = (commandsNameList: BotCommandName[]) => {
-  let command: BotCommand = {
+  const command: BotCommand = {
     name: 'getInfo',
     payload: commandsNameList,
   };
@@ -120,7 +120,7 @@ export const getLifeSpan = (lifeSpanDeviceList: LifeSpanDeviceType[]) => {
 export const getAIMap = () => {
   const command: BotCommand = {
     name: 'getAIMap',
-    //pointCount always seems to be 15
+    // pointCount always seems to be 15
     // this a start and an end index for an array lookin like:
     // [
     //   { x: 1775, y: -6125, type: 3, pid: 0, status: 0 },

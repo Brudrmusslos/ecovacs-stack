@@ -1,5 +1,5 @@
 import { Server, Socket } from 'socket.io';
-
+import type { BotPattern } from '../mysqlHelper/query.type';
 import {
   getAIMap,
   getInfo,
@@ -39,7 +39,7 @@ import { addBotPattern, getBotPattern } from '../mysqlHelper/botSavedPattern';
 import { ClientToServerEvents, InterServerEvents, ServerToClientEvents, SocketData } from './websockerServer.type';
 
 const intervalDuration = 60000;
-let getStatusInfoInterval: NodeJS.Timer;
+let getStatusInfoInterval: NodeJS.Timeout;
 
 // TODO add the same query as the app :
 // [getSleep","getError","getSpeed","getCleanCount","getDModule","getCleanPreference","getWaterInfo","getBlock","getBreakPoint","getVoice","getVolume"]
@@ -69,7 +69,7 @@ const getOneTimeBotStatus = () => {
 
 export let WSsocket: Socket<ClientToServerEvents, ServerToClientEvents, InterServerEvents, SocketData>;
 const websocketServer = () => {
-  let count: number = 0;
+  let count = 0;
   const io = new Server<ClientToServerEvents, ServerToClientEvents, InterServerEvents, SocketData>(3000, {
     cors: {
       origin: [`http://${process.env.HOST_IP}:4200`, 'http://localhost:4200'],
@@ -82,7 +82,7 @@ const websocketServer = () => {
     count = socket.rooms.size;
     console.log('WebSocket client connected', socket.id, `(total: ${count})`);
 
-    //TODO stop these query when bot is busy, with relocate for example
+    // TODO stop these query when bot is busy, with relocate for example
     getBotStatus();
     getOneTimeBotStatus();
 
@@ -171,25 +171,29 @@ const websocketServer = () => {
     });
 
     socket.on('getLifeSpanAccessory', () => {
-      getAllReminders().then((res: any) => {
-        console.log('getLifeSpanAccessory ', res);
+      type Reminder = { name: string; need_to_change: number };
+
+      getAllReminders().then((res: unknown) => {
+        const list = res as Reminder[];
         socket.emit(
           'lifeSpanReminder',
-          (res as any).map((current: any) => ({
+          list.map((current) => ({
             name: current.name,
             needToBeChanged: current.need_to_change === 1,
           })),
         );
       });
     });
+    type BotEvent = { read: number; [key: string]: any };
 
     const sendFormatedBotEventsList = () =>
-      getBotEvent().then((res: any) =>
+      getBotEvent().then((res: unknown) => {
+        const list = res as BotEvent[];
         socket.emit(
           'eventList',
-          res.map((current: any) => ({ ...current, read: current.read === 1 })),
-        ),
-      );
+          list.map((current) => ({ ...current, read: current.read === 1 })),
+        );
+      });
 
     socket.on('getEventsList', () => {
       sendFormatedBotEventsList();
@@ -206,7 +210,9 @@ const websocketServer = () => {
      */
 
     const sendBotSavedPatternList = () =>
-      getBotPattern().then((res: any) => socket.emit('savedPatternList', res as any[]));
+      getBotPattern().then((res: unknown) => {
+        socket.emit('savedPatternList', res as BotPattern[]);
+      });
 
     socket.on('getSavedPattern', () => sendBotSavedPatternList());
 

@@ -1,3 +1,4 @@
+import { debug } from '@/utils/debug';
 import { connect, MqttClient } from 'mqtt';
 
 import { addBotEvent, getBotEvent } from '../mysqlHelper/botEvent.query';
@@ -26,7 +27,7 @@ const mqttClient = () => {
   client = connect('mqtts://localhost:8883');
   console.info('starting Backend MQTT client');
   let vacuumMap: Maybe<VacuumMap> = null;
-  let botInfo = new BotInfo();
+  const botInfo = new BotInfo();
 
   client.on('connect', () => {
     console.log('connected');
@@ -112,10 +113,11 @@ const mqttClient = () => {
     }
 
     if (isTopic('onFwBuryPoint', topic)) {
-      const { parsed, raw } = getParsedContent(topic, message);
+      const { parsed } = getParsedContent(topic, message);
+      debug('parsed', parsed);
+      //debug('raw', raw);
       if (!parsed) return;
-
-      if (parsed?.d?.body?.data?.d_val?.act === 'online') {
+      if (((parsed as any).d)?.body?.data?.d_val?.act === 'online') {
         const splittedTopic = topic.split('/');
         botInfo.info = {
           ready: true,
@@ -139,25 +141,25 @@ const mqttClient = () => {
         );
       }
       addBotEvent(res.code, 'EVENT');
-      getBotEvent().then((res: any) => WSsocket?.emit('eventList', res));
+      getBotEvent().then((eventList: unknown) => WSsocket?.emit('eventList', eventList));
     }
 
     if (isTopic('onError', topic)) {
       const res = getDatafromMessage(message);
       const errorArray = res.code.filter((curr: number) => curr !== 0);
 
-      errorArray.length && addBotEvent(errorArray, 'ERROR');
-      getBotEvent().then((res: any) => WSsocket?.emit('eventList', res));
+      if (errorArray.length) addBotEvent(errorArray, 'ERROR');
+      getBotEvent().then((eventList: unknown) => WSsocket?.emit('eventList', eventList));
     }
 
-    if (isTopic('onMapInfo', topic)) {
-      const res = getDatafromMessage(message);
-    }
+    //if (isTopic('onMapInfo', topic)) {
+    //  const res = getDatafromMessage(message);
+    //}
 
     if (isTopic('setMapSubSet', topic)) {
       if (!vacuumMap) return;
 
-      //rooms
+      // rooms
       getMapSet(vacuumMap.settings.mid, 'ar');
       // no mop zone/wall
       getMapSet(vacuumMap.settings.mid, 'mw');
@@ -245,7 +247,7 @@ const mqttClient = () => {
           vacuumMap && getMinorMap(pieceID, vacuumMap.settings);
         });
 
-        //rooms
+        // rooms
         getMapSet(vacuumMap.settings.mid, 'ar');
         // no mop zone/wall
         getMapSet(vacuumMap.settings.mid, 'mw');

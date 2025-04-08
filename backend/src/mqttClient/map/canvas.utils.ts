@@ -2,12 +2,12 @@ import { Canvas, createCanvas } from 'canvas';
 import { Axis } from './map.model';
 
 export const trimCanvas = (source: Canvas) => {
-  let ctx = source.getContext('2d');
-  let result = createCanvas(source.width, source.height);
-  let resultCtx = result.getContext('2d');
-  let pixels = ctx.getImageData(0, 0, source.width, source.height);
-  let pixelsLength = pixels.data.length;
-  let bound = {
+  const ctx = source.getContext('2d');
+  const result = createCanvas(source.width, source.height);
+  const resultCtx = result.getContext('2d');
+  const pixels = ctx.getImageData(0, 0, source.width, source.height);
+  const pixelsLength = pixels.data.length;
+  const bound = {
     top: -1,
     left: -1,
     right: -1,
@@ -39,9 +39,9 @@ export const trimCanvas = (source: Canvas) => {
     }
   }
 
-  let trimHeight = bound.bottom - bound.top;
-  let trimWidth = bound.right - bound.left;
-  let trimmed = ctx.getImageData(bound.left, bound.top, trimWidth, trimHeight);
+  const trimHeight = bound.bottom - bound.top;
+  const trimWidth = bound.right - bound.left;
+  const trimmed = ctx.getImageData(bound.left, bound.top, trimWidth, trimHeight);
 
   result.width = trimWidth;
   result.height = trimHeight;
@@ -52,8 +52,8 @@ export const trimCanvas = (source: Canvas) => {
 };
 
 export const translateCanvas = (source: Canvas, axis: Axis) => {
-  let result = createCanvas(source.width, source.height);
-  let resultCtx = result.getContext('2d');
+  const result = createCanvas(source.width, source.height);
+  const resultCtx = result.getContext('2d');
 
   if (axis === 'x') {
     resultCtx.translate(source.width, 0);

@@ -1,16 +1,16 @@
+import { debug } from '@/utils/debug';
 import { createServer } from 'https';
-
 import { options, requestListener } from './server.utils';
 
 const httpsServer = () => {
-  const httpServer = createServer(options, requestListener);
+  const server = createServer(options, requestListener);
   const port = 443;
 
-  httpServer.listen(port, () => {
-    console.log(`HTTPS Server is running`);
+  server.listen(port, () => {
+    debug('HTTPS Server is running', { port });
   });
 
-  return httpServer;
+  return server;
 };
 
 export default httpsServer;

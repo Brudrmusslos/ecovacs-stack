@@ -38,10 +38,15 @@ export const parseTracePoints = async (data: string, startIndex: number): Promis
 // https://gitlab.com/michael.becker/vacuumclean/-/blob/master/deebot/deebot-core/README.md#map-details
 export class VacuumMap {
   private _settings!: MajorMap;
+
   private _piecesIDsList: number[] = [];
+
   private _mapBuffer = [...Array(800)].map(() => Array(800).fill(null));
+
   private _mapDataList: MapData[] = [];
+
   private readonly _intervalDuration = 2000;
+
   private _buildMapInterval!: NodeJS.Timeout;
 
   // 0 no data
@@ -71,7 +76,7 @@ export class VacuumMap {
     this._piecesIDsList = [...this._piecesIDsList.filter((current) => current !== value), value];
   }
 
-  public get piecesIDsList() {
+  public get piecesIDsList(): number[] {
     return this._piecesIDsList;
   }
 
@@ -79,18 +84,18 @@ export class VacuumMap {
     this._mapDataList = [...this._mapDataList.filter((current) => current.index !== value.index), value];
   }
 
-  public get mapDataList() {
+  public get mapDataList(): MapData[] {
     return this._mapDataList;
   }
 
-  public get settings() {
+  public get settings(): MajorMap {
     return this._settings;
   }
 
-  public buildMap() {
+  public buildMap(): void {
     this._mapDataList.forEach(async (current, index) => {
       await decompressLZMA(current.data).then((res) => {
-        this.fillBuffer(this._settings, res.toJSON().data, current.index);
+        this.fillBuffer(this._settings, [...res], current.index);
       });
       if (index === this._mapDataList.length - 1) {
         clearTimeout(this._buildMapInterval);

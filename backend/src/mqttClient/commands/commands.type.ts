@@ -87,7 +87,7 @@ type BotMotionState = 'working' | 'pause';
 
 // ChargeState
 export interface ChargeState {
-  isCharging: number /* boolean number*/;
+  isCharging: number /* boolean number */;
   mode: botMode;
 }
 
@@ -104,7 +104,7 @@ export interface AutoEmptyState {
 // MapSubSet
 export interface MapSubSet {
   type: MapSubSetType;
-  subtype: string /* number length 1*/;
+  subtype: string /* number length 1 */;
   connections: string /* string list like '9,' */;
   name: string;
   seqIndex: number;
@@ -114,7 +114,7 @@ export interface MapSubSet {
   cleanset: string /* string list like '1,0,2' */;
   valueSize: number;
   center: string /* x y, like '4825,-3125' */;
-  mssid: string /* number length 1*/;
+  mssid: string /* number length 1 */;
   value: string[][] /* decoded B64 LZMA, classic polygon coordinates like [[x, y], [x, y]...] */;
 }
 
@@ -138,19 +138,19 @@ export interface DevicesCoordinates {
   x: number;
   y: number;
   a: number;
-  invalid: number /* boolean number*/;
+  invalid: number /* boolean number */;
 }
 
 export interface BatteryState {
   level: number;
-  isLow: number /* boolean number*/;
+  isLow: number /* boolean number */;
 }
 export interface BotCommand {
   name: BotCommandName;
   payload: {} | [];
 }
 
-//TODO is there more ? like mop or dust bag ?
+// TODO is there more ? like mop or dust bag ?
 export type LifeSpanDeviceType = 'brush' | 'sideBrush' | 'heap' | 'unitCare' | 'dModule';
 
 export interface LifeSpanDevice {

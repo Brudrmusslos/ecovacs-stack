@@ -1,5 +1,5 @@
 export interface Schedules {
-  enable: number /* boolean number*/;
+  enable: number /* boolean number */;
   trigger: TriggerType;
   sid: number;
   state: number /* boolean number? */;
@@ -31,11 +31,11 @@ interface MapInfo {
   backupId: string;
   status: number;
   index: number;
-  using: number /* boolean number*/;
-  built: number /* boolean number*/;
+  using: number /* boolean number */;
+  built: number /* boolean number */;
   name: string;
 }
 export interface CachedMapInfo {
-  enable: number /* boolean number*/;
+  enable: number /* boolean number */;
   info: MapInfo[];
 }

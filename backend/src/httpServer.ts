@@ -1,16 +1,16 @@
+import { debug } from '@/utils/debug';
 import { createServer } from 'http';
-
 import { requestListener } from './server.utils';
 
 const httpServer = () => {
-  const httpServer = createServer(requestListener);
+  const server = createServer(requestListener);
   const port = 8080;
 
-  httpServer.listen(port, () => {
-    console.log(`HTTP Server is running`);
+  server.listen(port, () => {
+    debug('HTTPS Server is running', { port });
   });
 
-  return httpServer;
+  return server;
 };
 
 export default httpServer;

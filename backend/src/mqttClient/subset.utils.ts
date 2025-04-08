@@ -1,4 +1,4 @@
-export const formatStringSubset = (subset: string, chunkSize: number = 2) => {
+export const formatStringSubset = (subset: string, chunkSize = 2) => {
   const formattedSubset = [];
   const numberSubset = JSON.parse(subset);
   for (let index = 0; index < numberSubset.length; index += chunkSize) {

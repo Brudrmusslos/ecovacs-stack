@@ -1,3 +1,4 @@
+import { debug } from '@/utils/debug';
 import { MqttClient } from 'mqtt';
 import { makeId } from '../text.utils';
 import { BotCommand } from './commands.type';
@@ -19,8 +20,8 @@ export const getFormatedCommand = ({ payload }: BotCommand) =>
   JSON.stringify({ ...{ body: { data: Array.isArray(payload) ? payload : { ...payload } } }, ...getHeader() });
 
 // The 'init' commands are sent without 'header' or 'data' wrapper
-export const sendJSONCommand = (command: BotCommand, client: MqttClient, raw: boolean = false) => {
+export const sendJSONCommand = (command: BotCommand, client: MqttClient, raw = false) => {
   const topic = getJSONFormatedRequestTopic(command);
   const message = raw ? JSON.stringify(command.payload) : getFormatedCommand(command);
-  client.publish(topic, message, { qos: 0, retain: false }, (err) => err && console.log('sending err: ', err));
+  client.publish(topic, message, { qos: 0, retain: false }, (err) => err && debug('sending err: ', err));
 };

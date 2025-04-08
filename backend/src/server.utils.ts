@@ -5,7 +5,7 @@ import { inspect } from 'util';
 export const options = {
   key: fs.readFileSync('/opt/app/ssl.key'),
   cert: fs.readFileSync('/opt/app/ssl.crt'),
-//~ for some reason Node needs to have root certificate authority to trust mkcert-generated certificates
+  // ~ for some reason Node needs to have root certificate authority to trust mkcert-generated certificates
   ca: fs.readFileSync('/opt/app/rootCA.pem'),
 };
 
@@ -22,7 +22,7 @@ export const requestListener = (req: IncomingMessage, res: ServerResponse) => {
       body = JSON.parse(body);
     } catch {}
     console.log(`\x1b[34mHTTPS BODY: \x1b[0m [`, body, `]`);
-    //temporary to prevent a firmware download success then a bot crash when the bot call "https://portal.ecouser.net/api/ota/products/wukong/class/{ressources}/firmware/latest.json?"
+    // temporary to prevent a firmware download success then a bot crash when the bot call "https://portal.ecouser.net/api/ota/products/wukong/class/{ressources}/firmware/latest.json?"
     if (url && url.search('wukong') >= 0) {
       statusCode = 404;
     }

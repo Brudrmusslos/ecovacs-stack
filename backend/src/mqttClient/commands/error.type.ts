@@ -7,7 +7,7 @@ const TASK_TYPE_NOT_SUPPORTED_ERROR: BotErrorId = 20003;
 const HANDLE_DEAL_MSG_FAIL_ERROR: BotErrorId = 20011;
 const GET_POINT_COUNT_OUT_OF_RANGE_ERROR: BotErrorId = 20012;
 
-export {
+export type {
   BotErrorId,
   NO_ERROR,
   TASK_TYPE_NOT_SUPPORTED_ERROR,

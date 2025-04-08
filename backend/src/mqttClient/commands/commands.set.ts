@@ -57,7 +57,7 @@ export const setSpeed = (value: number) => {
 };
 
 export const EmptyDustBin = () => {
-  let command: BotCommand = {
+  const command: BotCommand = {
     name: 'setAutoEmpty',
     payload: { act: 'start' },
   };
@@ -65,7 +65,7 @@ export const EmptyDustBin = () => {
 };
 
 export const editAutoEmpty = (enable: number) => {
-  let command: BotCommand = {
+  const command: BotCommand = {
     name: 'setAutoEmpty',
     payload: { enable },
   };
@@ -186,7 +186,7 @@ const setMapSubSet = (
   type: MapSubSetType,
   act: BotAct,
   value: Maybe<string> = null,
-  subtype: string = '0',
+  subtype = '0',
   name: Maybe<string> = null,
 ) => {
   const command: BotCommand = {
@@ -242,7 +242,7 @@ export const delNoGoSubset = (mssid: string, mid: string) => {
   setMapSubSet(mssid, mid, 'vw', 'del');
 };
 
-const setMapSet = (act: BotAct, mid: string, type: MapSubSetType, subsets: { values: any; mssid: string }[]) => {
+const setMapSet = (act: BotAct, mid: string, type: MapSubSetType, subsets: { values: unknown; mssid: string }[]) => {
   const command: BotCommand = {
     name: 'setMapSet',
     payload: {
@@ -258,7 +258,7 @@ const setMapSet = (act: BotAct, mid: string, type: MapSubSetType, subsets: { val
   sendJSONCommand(command, client);
 };
 
-export const mergeRooms = (mid: string, subsets: { values: any; mssid: string }[]) => {
+export const mergeRooms = (mid: string, subsets: { values: unknown; mssid: string }[]) => {
   setMapSet('merge', mid, 'ar', subsets);
 };
 
@@ -267,7 +267,7 @@ const setCachedMapInfo = (
   mid: string,
   reMid: Maybe<string> = null,
   name: Maybe<string> = null,
-  isFake: boolean = true,
+  isFake = true,
 ) => {
   const command: BotCommand = {
     name: 'setCachedMapInfo',

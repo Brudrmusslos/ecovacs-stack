@@ -38,8 +38,8 @@ export interface ServerToClientEvents {
   waterInfo: (params: { enable: boolean; amount: number; sweepType: number }) => void;
   doNotDisturb: (params: { enable: boolean; start: string; end: string }) => void;
   lifeSpanInfo: (params: LifeSpanDevice[]) => void;
-  lifeSpanReminder: (params: any /*todo*/) => void;
-  eventList: (eventList: any /*todo*/) => void;
+  lifeSpanReminder: (params: unknown /* todo */) => void;
+  eventList: (eventList: unknown /* todo */) => void;
   savedPatternList: (patternList: BotPattern[]) => void;
   obstacleList: (obstacleList: AiMapObstacle[]) => void;
   cachedMapInfo: (cachedMapInfo: CachedMapInfo[]) => void;
@@ -88,7 +88,7 @@ export interface ClientToServerEvents {
   savePattern: (pattern: BotPattern) => void;
   getSavedPattern: () => void;
   splitRoom: (params: { mssid: string; mid: string; value: string }) => void;
-  mergeRooms: (params: { mid: string; subsets: { values: any; mssid: string }[] }) => void;
+  mergeRooms: (params: { mid: string; subsets: { values: unknown; mssid: string }[] }) => void;
   renameRoom: (params: { mssid: string; mid: string; subtype: string; name: string }) => void;
   addNoMopSubset: (params: { value: string; mid: string }) => void;
   addNoGoSubset: (params: { value: string; mid: string }) => void;

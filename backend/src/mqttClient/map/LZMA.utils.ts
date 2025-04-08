@@ -1,23 +1,20 @@
 import { decompress } from 'lzma-native';
 
-declare module 'lzma-native' {
-  export function decompress(
-    buf: Buffer | string,
-    options?: LzmaOptions | Preset,
-    on_finish?: (result: Buffer) => void,
-  ): Promise<Buffer>;
-}
-
 const decodeB64 = (str: string) => Buffer.from(str, 'base64');
 
-const toBigIndian = (buffer: Buffer) => {
+const toBigEndian = (buffer: Buffer) => {
   const fourBytesBuffer = Buffer.allocUnsafe(4);
   fourBytesBuffer.writeUintLE(0, 0, 4);
   const start = buffer.subarray(0, 9);
   const end = buffer.subarray(9);
-  const mergedBuffer = Buffer.concat([start, fourBytesBuffer, end]);
-  return mergedBuffer;
+  return Buffer.concat([start, fourBytesBuffer, end]);
 };
 
-export const decompressLZMA = async (data: string) =>
-  await decompress(toBigIndian(decodeB64(data)), undefined, undefined);
+export const decompressLZMA = (data: string): Promise<Buffer> => {
+  return new Promise((resolve, reject) => {
+    decompress(toBigEndian(decodeB64(data)), undefined, (result: Buffer | undefined) => {
+      if (!result) return reject(new Error('LZMA decompression failed'));
+      resolve(result);
+    });
+  });
+};
