@@ -1,0 +1,20 @@
+{
+  "body": {
+    "data": {
+      "act": "stop",
+      "content": {
+        "total": 0,
+        "donotClean": 0,
+        "count": 0,
+        "type": "auto",
+        "bdTaskID": "1744214946894023"
+      }
+    }
+  },
+  "header": {
+    "pri": 2,
+    "tzm": 120,
+    "ts": 1744214946894,
+    "ver": "0.0.22"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "header": {
+    "pri": 1,
+    "tzm": 60,
+    "ts": "1744218484776",
+    "ver": "0.0.1",
+    "fwVer": "1.6.8",
+    "hwVer": "0.1.1",
+    "wkVer": "0.1.54"
+  },
+  "body": {
+    "code": 0,
+    "msg": "ok",
+    "data": {
+      "mid": "759946304",
+      "pieceIndex": 34,
+      "pieceValue": "XQAABAAQJwAAAABuPEkLZonE2/tbM2vJONju0v4D//fpZlk2NDyfBUyWtTE0n1eHWe69I469iM+F6L8RXKkpwsLp/J31IQkWvO33F+FK78X05SI3XUhTYupmvcpYaYT1xbUAuFVuzpXe+j7E9LEtlvW9Ce8q",
+      "type": "ol"
+    }
+  }
+}

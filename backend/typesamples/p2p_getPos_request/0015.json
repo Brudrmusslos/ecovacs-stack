@@ -1,0 +1,14 @@
+{
+  "body": {
+    "data": [
+      "chargePos",
+      "deebotPos"
+    ]
+  },
+  "header": {
+    "pri": 2,
+    "tzm": 120,
+    "ts": 1744218458209,
+    "ver": "0.0.22"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "header": {
+    "pri": 1,
+    "tzm": 60,
+    "ts": "1744214719904",
+    "ver": "0.0.1",
+    "fwVer": "1.6.8",
+    "hwVer": "0.1.1",
+    "wkVer": "0.1.54"
+  },
+  "body": {
+    "gid": "G1744211603783",
+    "index": "0000000387",
+    "ts": "1744214719837",
+    "id": "8621744214719837",
+    "AISL": 1,
+    "isPressurized": 1,
+    "continue": 1,
+    "DND": 0,
+    "childLock": 0,
+    "autocollect": 0,
+    "personalClean": 0,
+    "fanspeed": 0,
+    "waterAmount": 0,
+    "cleanCount": 2,
+    "personalCleanSetting": []
+  }
+}

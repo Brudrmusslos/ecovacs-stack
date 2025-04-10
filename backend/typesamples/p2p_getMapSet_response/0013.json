@@ -1,0 +1,48 @@
+{
+  "header": {
+    "pri": 1,
+    "tzm": 60,
+    "ts": "1744218484779",
+    "ver": "0.0.1",
+    "fwVer": "1.6.8",
+    "hwVer": "0.1.1",
+    "wkVer": "0.1.54"
+  },
+  "body": {
+    "code": 0,
+    "msg": "ok",
+    "data": {
+      "type": "ar",
+      "count": 5,
+      "mid": "759946304",
+      "msid": "855817511",
+      "subsets": [
+        {
+          "mssid": "0",
+          "name": "",
+          "totalCount": 54
+        },
+        {
+          "mssid": "1",
+          "name": "",
+          "totalCount": 30
+        },
+        {
+          "mssid": "2",
+          "name": "",
+          "totalCount": 33
+        },
+        {
+          "mssid": "3",
+          "name": "",
+          "totalCount": 27
+        },
+        {
+          "mssid": "4",
+          "name": "",
+          "totalCount": 15
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,148 @@
+{
+  "header": {
+    "pri": 1,
+    "tzm": 60,
+    "ts": "1744210486431",
+    "ver": "0.0.1",
+    "fwVer": "1.6.8",
+    "hwVer": "0.1.1",
+    "wkVer": "0.1.54"
+  },
+  "body": [
+    {
+      "signal": -44,
+      "uptime": " 14:40:45 up 30 min,  0 users,  load average: 1.21, 1.71, 2.34, POWER_RESET",
+      "meminfo": "459376,551024",
+      "pos": "0,0",
+      "isvalid": 0,
+      "mapid": "0759946304",
+      "ts": "1744210486427"
+    },
+    {
+      "signal": -45,
+      "uptime": " 14:41:45 up 31 min,  0 users,  load average: 1.64, 1.73, 2.31, POWER_RESET",
+      "meminfo": "459584,550816",
+      "pos": "0,0",
+      "isvalid": 0,
+      "mapid": "0759946304",
+      "ts": "1744210486427"
+    },
+    {
+      "signal": -44,
+      "uptime": " 14:42:46 up 32 min,  0 users,  load average: 1.81, 1.80, 2.30, POWER_RESET",
+      "meminfo": "459536,550864",
+      "pos": "0,0",
+      "isvalid": 0,
+      "mapid": "0759946304",
+      "ts": "1744210486427"
+    },
+    {
+      "signal": -44,
+      "uptime": " 14:43:46 up 33 min,  0 users,  load average: 1.71, 1.78, 2.26, POWER_RESET",
+      "meminfo": "459348,551052",
+      "pos": "0,0",
+      "isvalid": 0,
+      "mapid": "0759946304",
+      "ts": "1744210486427"
+    },
+    {
+      "signal": -44,
+      "uptime": " 14:44:45 up 34 min,  0 users,  load average: 1.92, 1.81, 2.24, POWER_RESET",
+      "meminfo": "459248,551152",
+      "pos": "0,0",
+      "isvalid": 0,
+      "mapid": "0759946304",
+      "ts": "1744210486427"
+    },
+    {
+      "signal": -44,
+      "uptime": " 14:45:45 up 35 min,  0 users,  load average: 1.53, 1.75, 2.20, POWER_RESET",
+      "meminfo": "459032,551368",
+      "pos": "0,0",
+      "isvalid": 0,
+      "mapid": "0759946304",
+      "ts": "1744210486427"
+    },
+    {
+      "signal": -44,
+      "uptime": " 14:46:46 up 36 min,  0 users,  load average: 1.37, 1.68, 2.15, POWER_RESET",
+      "meminfo": "459348,551052",
+      "pos": "0,0",
+      "isvalid": 0,
+      "mapid": "0759946304",
+      "ts": "1744210486427"
+    },
+    {
+      "signal": -44,
+      "uptime": " 14:47:46 up 37 min,  0 users,  load average: 1.55, 1.68, 2.11, POWER_RESET",
+      "meminfo": "458996,551404",
+      "pos": "0,0",
+      "isvalid": 0,
+      "mapid": "0759946304",
+      "ts": "1744210486427"
+    },
+    {
+      "signal": -44,
+      "uptime": " 14:48:46 up 38 min,  0 users,  load average: 0.99, 1.51, 2.03, POWER_RESET",
+      "meminfo": "459752,550648",
+      "pos": "0,0",
+      "isvalid": 0,
+      "mapid": "0759946304",
+      "ts": "1744210486427"
+    },
+    {
+      "signal": -44,
+      "uptime": " 14:49:45 up 39 min,  0 users,  load average: 1.10, 1.43, 1.97, POWER_RESET",
+      "meminfo": "459040,551360",
+      "pos": "0,0",
+      "isvalid": 0,
+      "mapid": "0759946304",
+      "ts": "1744210486427"
+    },
+    {
+      "signal": -44,
+      "uptime": " 14:50:45 up 40 min,  0 users,  load average: 1.50, 1.46, 1.94, POWER_RESET",
+      "meminfo": "458964,551436",
+      "pos": "0,0",
+      "isvalid": 0,
+      "mapid": "0759946304",
+      "ts": "1744210486427"
+    },
+    {
+      "signal": -44,
+      "uptime": " 14:51:46 up 41 min,  0 users,  load average: 1.62, 1.54, 1.94, POWER_RESET",
+      "meminfo": "458624,551776",
+      "pos": "0,0",
+      "isvalid": 0,
+      "mapid": "0759946304",
+      "ts": "1744210486427"
+    },
+    {
+      "signal": -44,
+      "uptime": " 14:52:46 up 42 min,  0 users,  load average: 1.78, 1.60, 1.94, POWER_RESET",
+      "meminfo": "459140,551260",
+      "pos": "0,0",
+      "isvalid": 0,
+      "mapid": "0759946304",
+      "ts": "1744210486427"
+    },
+    {
+      "signal": -44,
+      "uptime": " 14:53:45 up 43 min,  0 users,  load average: 1.77, 1.64, 1.93, POWER_RESET",
+      "meminfo": "459312,551088",
+      "pos": "0,0",
+      "isvalid": 0,
+      "mapid": "0759946304",
+      "ts": "1744210486427"
+    },
+    {
+      "signal": -44,
+      "uptime": " 14:54:46 up 44 min,  0 users,  load average: 1.70, 1.66, 1.92, POWER_RESET",
+      "meminfo": "459040,551360",
+      "pos": "0,0",
+      "isvalid": 0,
+      "mapid": "0759946304",
+      "ts": "1744210486427"
+    }
+  ]
+}

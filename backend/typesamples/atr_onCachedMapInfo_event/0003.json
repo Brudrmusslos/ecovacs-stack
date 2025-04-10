@@ -1,0 +1,60 @@
+{
+  "header": {
+    "pri": 1,
+    "tzm": 60,
+    "ts": "1744211613961",
+    "ver": "0.0.1",
+    "fwVer": "1.6.8",
+    "hwVer": "0.1.1",
+    "wkVer": "0.1.54"
+  },
+  "body": {
+    "code": 0,
+    "msg": "ok",
+    "data": {
+      "enable": 1,
+      "info": [
+        {
+          "mid": "0",
+          "backupId": "",
+          "status": 1,
+          "index": 3,
+          "using": 0,
+          "built": 0,
+          "name": "",
+          "isFastBuilding": 0
+        },
+        {
+          "mid": "759946304",
+          "backupId": "2021733874",
+          "status": 0,
+          "index": 0,
+          "using": 1,
+          "built": 1,
+          "name": "",
+          "isFastBuilding": 2
+        },
+        {
+          "mid": "0",
+          "backupId": "",
+          "status": 1,
+          "index": 1,
+          "using": 0,
+          "built": 0,
+          "name": "",
+          "isFastBuilding": 0
+        },
+        {
+          "mid": "0",
+          "backupId": "",
+          "status": 1,
+          "index": 2,
+          "using": 0,
+          "built": 0,
+          "name": "",
+          "isFastBuilding": 0
+        }
+      ]
+    }
+  }
+}

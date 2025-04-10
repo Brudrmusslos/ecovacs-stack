@@ -1,0 +1,21 @@
+{
+  "body": {
+    "data": {
+      "act": "start",
+      "content": {
+        "total": 0,
+        "donotClean": 0,
+        "count": 0,
+        "type": "spotArea",
+        "bdTaskID": "1744214909495242",
+        "value": "0,3,2"
+      }
+    }
+  },
+  "header": {
+    "pri": 2,
+    "tzm": 120,
+    "ts": 1744214909495,
+    "ver": "0.0.22"
+  }
+}

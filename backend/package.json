@@ -6,7 +6,10 @@
     "start": "ts-node src/index.ts",
     "eslint": "eslint",
     "eslint:fix": "eslint --fix",
-    "unused": "ts-unused-exports tsconfig.json"
+    "unused": "ts-unused-exports tsconfig.json",
+    "sniff": "ts-node src/mqttSniffer/mqttSniffer.ts",
+    "topicext": "ts-node src/tools/mqttTopicExtractor.ts",
+    "generate:types": "ts-node src/tools/generateTypes.ts"
   },
   "license": "MIT",
   "dependencies": {
@@ -17,6 +20,7 @@
     "microtime": "^3.1.1",
     "mqtt": "^5.10.4",
     "mysql2": "^3.14.0",
+    "quicktype-core": "^23.0.171",
     "socket.io": "^4.8.1",
     "tsconfig-paths": "^4.2.0"
   },

@@ -1,0 +1,22 @@
+{
+  "header": {
+    "pri": 1,
+    "tzm": 60,
+    "ts": "1744218458273",
+    "ver": "0.0.1",
+    "fwVer": "1.6.8",
+    "hwVer": "0.1.1",
+    "wkVer": "0.1.54"
+  },
+  "body": {
+    "code": 0,
+    "msg": "ok",
+    "data": {
+      "type": "svw",
+      "hasUnRead": 0,
+      "count": 0,
+      "mid": "759946304",
+      "subsets": []
+    }
+  }
+}

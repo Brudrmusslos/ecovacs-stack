@@ -1,0 +1,21 @@
+{
+  "body": {
+    "data": {
+      "act": "start",
+      "content": {
+        "total": 0,
+        "donotClean": 0,
+        "count": 0,
+        "type": "customArea",
+        "bdTaskID": "1744214720334901",
+        "value": "-3613,234,-2441,1367;"
+      }
+    }
+  },
+  "header": {
+    "pri": 2,
+    "tzm": 120,
+    "ts": 1744214720335,
+    "ver": "0.0.22"
+  }
+}

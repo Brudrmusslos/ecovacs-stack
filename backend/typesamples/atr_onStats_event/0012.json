@@ -1,0 +1,25 @@
+{
+  "header": {
+    "pri": 1,
+    "tzm": 60,
+    "ts": "1744212837100",
+    "ver": "0.0.1",
+    "fwVer": "1.6.8",
+    "hwVer": "0.1.1",
+    "wkVer": "0.1.54"
+  },
+  "body": {
+    "data": {
+      "area": 11,
+      "time": 1020,
+      "cid": "1181320132",
+      "start": "1744211789",
+      "type": "auto",
+      "enablePowerMop": 0,
+      "powerMopType": 1,
+      "aiopen": 1,
+      "aitypes": [],
+      "avoidCount": 0
+    }
+  }
+}

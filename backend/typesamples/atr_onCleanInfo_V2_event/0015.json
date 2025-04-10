@@ -1,0 +1,27 @@
+{
+  "header": {
+    "pri": 1,
+    "tzm": 60,
+    "ts": "1744214925202",
+    "ver": "0.0.1",
+    "fwVer": "1.6.8",
+    "hwVer": "0.1.1",
+    "wkVer": "0.1.54"
+  },
+  "body": {
+    "data": {
+      "trigger": "none",
+      "state": "clean",
+      "cleanState": {
+        "cid": "122",
+        "router": "plan",
+        "motionState": "working",
+        "content": {
+          "type": "spotArea",
+          "value": "0,3,2",
+          "count": 2
+        }
+      }
+    }
+  }
+}

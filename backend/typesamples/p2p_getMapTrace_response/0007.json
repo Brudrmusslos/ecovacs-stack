@@ -1,0 +1,22 @@
+{
+  "header": {
+    "pri": 1,
+    "tzm": 60,
+    "ts": "1744218188176",
+    "ver": "0.0.1",
+    "fwVer": "1.6.8",
+    "hwVer": "0.1.1",
+    "wkVer": "0.1.54"
+  },
+  "body": {
+    "code": 0,
+    "msg": "ok",
+    "data": {
+      "tid": "1190206595",
+      "totalCount": 25,
+      "traceStart": 0,
+      "pointCount": 25,
+      "traceValue": "XQAABAB9AAAAAEA/i2/kTVzXpUFnV9ewV1+mVg4Wt2LjG0jCSx0tsLDJc3KEtLLyYc0W2tSrLBX4Qx7bDtjRKdgqBK75JAjxDcfyfC+T5dHJEgltbFzapv09lyHqGON1s/sg6KCfM7sDV6A0f5zz"
+    }
+  }
+}

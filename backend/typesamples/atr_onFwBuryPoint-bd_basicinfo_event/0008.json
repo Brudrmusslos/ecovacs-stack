@@ -1,0 +1,25 @@
+{
+  "header": {
+    "pri": 1,
+    "tzm": 60,
+    "ts": "1744214737578",
+    "ver": "0.0.1",
+    "fwVer": "1.6.8",
+    "hwVer": "0.1.1",
+    "wkVer": "0.1.54"
+  },
+  "body": {
+    "gid": "G1744211603783",
+    "index": "0000000396",
+    "ts": "1744214737286",
+    "id": "7451744214737286",
+    "battery": 63,
+    "chargeState": 0,
+    "onCharger": 0,
+    "robotState": 1,
+    "robotPos": "-3794.25,-4086.91,-0.88",
+    "chargerPos": "0.00,0.00,0.00",
+    "dirtboxState": 1,
+    "mopState": 4
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "body": {
+    "data": [
+      "getCachedMapInfo",
+      "getBreakPoint"
+    ]
+  },
+  "header": {
+    "pri": 2,
+    "tzm": 120,
+    "ts": 1744218526299,
+    "ver": "0.0.22"
+  }
+}

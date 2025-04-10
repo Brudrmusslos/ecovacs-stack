@@ -1,0 +1,33 @@
+{
+  "header": {
+    "pri": 1,
+    "tzm": 60,
+    "ts": "1744216319395",
+    "ver": "0.0.1",
+    "fwVer": "1.6.8",
+    "hwVer": "0.1.1",
+    "wkVer": "0.1.54"
+  },
+  "body": {
+    "data": [
+      {
+        "enable": 1,
+        "trigger": "app",
+        "sid": "17442148954433",
+        "state": 0,
+        "repeat": "0000000",
+        "hour": 2,
+        "minute": 5,
+        "mid": "759946304",
+        "mapNickName": "",
+        "index": 0,
+        "content": {
+          "name": "clean",
+          "jsonStr": "{\"router\":\"plan\",\"content\":{\"type\":\"spotArea\",\"value\":\"0,2\",\"subtype\":\"1,0\",\"areaName\":\",\"}}"
+        }
+      }
+    ],
+    "code": 0,
+    "msg": "ok"
+  }
+}

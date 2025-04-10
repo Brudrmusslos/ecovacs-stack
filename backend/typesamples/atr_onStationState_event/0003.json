@@ -1,0 +1,23 @@
+{
+  "header": {
+    "pri": 1,
+    "tzm": 60,
+    "ts": "1744211774135",
+    "ver": "0.0.1",
+    "fwVer": "1.6.8",
+    "hwVer": "0.1.1",
+    "wkVer": "0.1.54"
+  },
+  "body": {
+    "data": {
+      "content": {
+        "error": [],
+        "type": 3,
+        "motionState": 1
+      },
+      "state": 1
+    },
+    "code": 0,
+    "msg": "ok"
+  }
+}

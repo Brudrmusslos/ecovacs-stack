@@ -1,0 +1,95 @@
+{
+  "header": {
+    "pri": 1,
+    "tzm": 60,
+    "ts": "1744218510893",
+    "ver": "0.0.1",
+    "fwVer": "1.6.8",
+    "hwVer": "0.1.1",
+    "wkVer": "0.1.54"
+  },
+  "body": {
+    "code": 0,
+    "msg": "ok",
+    "data": {
+      "getCleanInfo": {
+        "data": {
+          "trigger": "none",
+          "state": "idle"
+        },
+        "code": 0,
+        "msg": "ok"
+      },
+      "getChargeState": {
+        "code": 0,
+        "msg": "ok",
+        "data": {
+          "isCharging": 1,
+          "mode": "autoEmpty"
+        }
+      },
+      "getBattery": {
+        "code": 0,
+        "msg": "ok",
+        "data": {
+          "value": 78,
+          "isLow": 0
+        }
+      },
+      "getSpeed": {
+        "code": 0,
+        "msg": "ok",
+        "data": {
+          "speed": 1000
+        }
+      },
+      "getCleanCount": {
+        "data": {
+          "count": 1
+        },
+        "code": 0,
+        "msg": "ok"
+      },
+      "getWaterInfo": {
+        "code": 0,
+        "msg": "ok",
+        "data": {
+          "enable": 0,
+          "amount": 1,
+          "type": 0,
+          "sweepType": 1
+        }
+      },
+      "getRecognization": {
+        "data": {
+          "state": 1,
+          "update": 0,
+          "items": [
+            {
+              "type": 6,
+              "state": 244
+            },
+            {
+              "type": 5,
+              "state": 111
+            },
+            {
+              "type": 3,
+              "state": 8
+            },
+            {
+              "type": 1,
+              "state": 0
+            },
+            {
+              "type": 4,
+              "state": 0
+            }
+          ]
+        },
+        "code": 0,
+        "msg": "ok"
+      }
+    }
+  }
+}

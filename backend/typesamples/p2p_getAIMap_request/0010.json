@@ -1,0 +1,15 @@
+{
+  "body": {
+    "data": {
+      "pointCount": 30,
+      "pointStart": 0,
+      "bdTaskID": "1744218390172246"
+    }
+  },
+  "header": {
+    "pri": 2,
+    "tzm": 120,
+    "ts": 1744218390172,
+    "ver": "0.0.22"
+  }
+}

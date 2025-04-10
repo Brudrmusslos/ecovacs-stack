@@ -1,0 +1,148 @@
+{
+  "header": {
+    "pri": 1,
+    "tzm": 60,
+    "ts": "1744215147524",
+    "ver": "0.0.1",
+    "fwVer": "1.6.8",
+    "hwVer": "0.1.1",
+    "wkVer": "0.1.54"
+  },
+  "body": [
+    {
+      "signal": -53,
+      "uptime": " 15:58:27 up 45 min,  0 users,  load average: 1.66, 1.66, 2.47, POWER_RESET",
+      "meminfo": "505652,504748",
+      "pos": "-4411,-3895",
+      "isvalid": 1,
+      "mapid": "0759946304",
+      "ts": "1744215147478"
+    },
+    {
+      "signal": -53,
+      "uptime": " 15:59:27 up 46 min,  0 users,  load average: 1.17, 1.50, 2.36, POWER_RESET",
+      "meminfo": "505964,504436",
+      "pos": "-4411,-3895",
+      "isvalid": 1,
+      "mapid": "0759946304",
+      "ts": "1744215147478"
+    },
+    {
+      "signal": -53,
+      "uptime": " 16:00:27 up 47 min,  0 users,  load average: 1.26, 1.48, 2.30, POWER_RESET",
+      "meminfo": "505944,504456",
+      "pos": "-4411,-3895",
+      "isvalid": 1,
+      "mapid": "0759946304",
+      "ts": "1744215147478"
+    },
+    {
+      "signal": -53,
+      "uptime": " 16:01:27 up 48 min,  0 users,  load average: 1.65, 1.56, 2.27, POWER_RESET",
+      "meminfo": "505540,504860",
+      "pos": "-4411,-3895",
+      "isvalid": 1,
+      "mapid": "0759946304",
+      "ts": "1744215147478"
+    },
+    {
+      "signal": -53,
+      "uptime": " 16:02:27 up 49 min,  0 users,  load average: 1.26, 1.45, 2.19, POWER_RESET",
+      "meminfo": "506080,504320",
+      "pos": "-4411,-3895",
+      "isvalid": 1,
+      "mapid": "0759946304",
+      "ts": "1744215147478"
+    },
+    {
+      "signal": -53,
+      "uptime": " 16:03:27 up 50 min,  0 users,  load average: 1.10, 1.37, 2.11, POWER_RESET",
+      "meminfo": "505760,504640",
+      "pos": "-4411,-3895",
+      "isvalid": 1,
+      "mapid": "0759946304",
+      "ts": "1744215147478"
+    },
+    {
+      "signal": -53,
+      "uptime": " 16:04:27 up 51 min,  0 users,  load average: 1.41, 1.38, 2.07, POWER_RESET",
+      "meminfo": "506060,504340",
+      "pos": "-4411,-3895",
+      "isvalid": 1,
+      "mapid": "0759946304",
+      "ts": "1744215147478"
+    },
+    {
+      "signal": -53,
+      "uptime": " 16:05:27 up 52 min,  0 users,  load average: 1.74, 1.47, 2.05, POWER_RESET",
+      "meminfo": "548504,461896",
+      "pos": "-4089,-3884",
+      "isvalid": 1,
+      "mapid": "0759946304",
+      "ts": "1744215147478"
+    },
+    {
+      "signal": -53,
+      "uptime": " 16:06:27 up 53 min,  0 users,  load average: 2.48, 1.82, 2.14, POWER_RESET",
+      "meminfo": "505420,504980",
+      "pos": "-4398,-3888",
+      "isvalid": 1,
+      "mapid": "0759946304",
+      "ts": "1744215147478"
+    },
+    {
+      "signal": -52,
+      "uptime": " 16:07:27 up 54 min,  0 users,  load average: 2.46, 1.95, 2.17, POWER_RESET",
+      "meminfo": "505464,504936",
+      "pos": "-3953,-3886",
+      "isvalid": 1,
+      "mapid": "0759946304",
+      "ts": "1744215147478"
+    },
+    {
+      "signal": -51,
+      "uptime": " 16:08:27 up 55 min,  0 users,  load average: 1.92, 1.91, 2.14, POWER_RESET",
+      "meminfo": "507884,502516",
+      "pos": "-4385,-3884",
+      "isvalid": 1,
+      "mapid": "0759946304",
+      "ts": "1744215147478"
+    },
+    {
+      "signal": -53,
+      "uptime": " 16:09:27 up 56 min,  0 users,  load average: 2.90, 2.16, 2.21, POWER_RESET",
+      "meminfo": "518904,491496",
+      "pos": "-3882,-3893",
+      "isvalid": 1,
+      "mapid": "0759946304",
+      "ts": "1744215147478"
+    },
+    {
+      "signal": -51,
+      "uptime": " 16:10:27 up 57 min,  0 users,  load average: 2.24, 2.09, 2.18, POWER_RESET",
+      "meminfo": "518520,491880",
+      "pos": "-4394,-3880",
+      "isvalid": 1,
+      "mapid": "0759946304",
+      "ts": "1744215147478"
+    },
+    {
+      "signal": -51,
+      "uptime": " 16:11:27 up 58 min,  0 users,  load average: 1.88, 1.99, 2.14, POWER_RESET",
+      "meminfo": "507172,503228",
+      "pos": "-4394,-3880",
+      "isvalid": 1,
+      "mapid": "0759946304",
+      "ts": "1744215147478"
+    },
+    {
+      "signal": -51,
+      "uptime": " 16:12:27 up 59 min,  0 users,  load average: 1.88, 1.97, 2.12, POWER_RESET",
+      "meminfo": "507320,503080",
+      "pos": "-4394,-3880",
+      "isvalid": 1,
+      "mapid": "0759946304",
+      "ts": "1744215147478"
+    }
+  ]
+}

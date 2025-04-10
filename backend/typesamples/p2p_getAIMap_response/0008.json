@@ -1,0 +1,22 @@
+{
+  "header": {
+    "pri": 1,
+    "tzm": 60,
+    "ts": "1744218215869",
+    "ver": "0.0.1",
+    "fwVer": "1.6.8",
+    "hwVer": "0.1.1",
+    "wkVer": "0.1.54"
+  },
+  "body": {
+    "data": {
+      "mid": "759946304",
+      "pointValue": [],
+      "pointStart": 0,
+      "totalCount": 0,
+      "pointCount": 0
+    },
+    "code": 0,
+    "msg": "ok"
+  }
+}

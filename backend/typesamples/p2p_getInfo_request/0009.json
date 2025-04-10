@@ -1,0 +1,19 @@
+{
+  "body": {
+    "data": [
+      "getCleanInfo",
+      "getChargeState",
+      "getBattery",
+      "getSpeed",
+      "getCleanCount",
+      "getWaterInfo",
+      "getRecognization"
+    ]
+  },
+  "header": {
+    "pri": 2,
+    "tzm": 120,
+    "ts": 1744218484895,
+    "ver": "0.0.22"
+  }
+}

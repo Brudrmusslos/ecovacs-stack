@@ -30,9 +30,9 @@ ENV NODE_EXTRA_CA_CERTS="/usr/local/share/ca-certificates/mkcert-root.crt"
 
 WORKDIR /opt/app
 
-COPY package.json yarn.lock ./
-RUN corepack enable && corepack prepare yarn@4.8.1 --activate
-RUN yarn install
+#COPY package.json yarn.lock ./
+#RUN corepack enable && corepack prepare yarn@4.8.1 --activate
+#RUN yarn install
 
 #COPY . .
 

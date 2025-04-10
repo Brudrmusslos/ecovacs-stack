@@ -1,0 +1,21 @@
+{
+  "body": {
+    "data": {
+      "act": "start",
+      "content": {
+        "total": 0,
+        "donotClean": 0,
+        "count": 0,
+        "type": "mapPoint",
+        "bdTaskID": "1744214797384933",
+        "value": "-2636,-4726;"
+      }
+    }
+  },
+  "header": {
+    "pri": 2,
+    "tzm": 120,
+    "ts": 1744214797385,
+    "ver": "0.0.22"
+  }
+}

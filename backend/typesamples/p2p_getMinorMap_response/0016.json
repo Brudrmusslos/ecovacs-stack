@@ -1,0 +1,21 @@
+{
+  "header": {
+    "pri": 1,
+    "tzm": 60,
+    "ts": "1744218511068",
+    "ver": "0.0.1",
+    "fwVer": "1.6.8",
+    "hwVer": "0.1.1",
+    "wkVer": "0.1.54"
+  },
+  "body": {
+    "code": 0,
+    "msg": "ok",
+    "data": {
+      "mid": "759946304",
+      "pieceIndex": 27,
+      "pieceValue": "XQAABAAQJwAAAABv/f//eQDio4vQlMDXEP1dXQaLEFgvQIawc0JE3isteBJQSDDeo20G7SKfJH40CPq0J9Ob1FqjGZh9+YNt2wZ67bf8lwlllxpyU2drgofaC2J5CLqDWVsiZODa1hXKhXzesKgnrtTjfCDiN3AkkbaGEAbryDTnJnsnL9xfto6anyr2k3ePfHIDbP0YItExgtkmLuMDOfQZZkIGA6WzW8SoZ1u8Z8CP1DbAwS4tf3eVIeas4DiFjE8d0cuwjYiC+NPmj9Lw1viOF0F4Xd2GCQY6JSj+xWIjISWSbeD3miKtRCPZPu/PTFmfCfnn244eLCX+LrNvmf6iBgl8IAUBYlT4u0PCSC0e5jmQBd5ocsKJDPCmB1XllHG0cV6q/V9a1b8WJdXT3vExthEo8cwE1gjwSaIQoEI0qKnxYLoH8WGgm13JtCNO5If8y+w0gnSuxU885WCJuWMspgUy1IjBzMtsQT+cSbVrIfPuHFerTmVvawA=",
+      "type": "ol"
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "header": {
+    "pri": 1,
+    "tzm": 60,
+    "ts": "1744218458445",
+    "ver": "0.0.1",
+    "fwVer": "1.6.8",
+    "hwVer": "0.1.1",
+    "wkVer": "0.1.54"
+  },
+  "body": {
+    "code": 0,
+    "msg": "ok",
+    "data": {
+      "type": "ar",
+      "subtype": "3",
+      "connections": "0,",
+      "name": "",
+      "seqIndex": 0,
+      "seq": 0,
+      "count": 0,
+      "totalCount": 30,
+      "index": 0,
+      "cleanset": "1,0,2",
+      "valueSize": 359,
+      "compress": 1,
+      "center": "-3025,-5325",
+      "mssid": "1",
+      "value": "XQAABABnAQAAABaNAyNovbBihFM9n2Aihj1RybDuC4L3XKPtdKwYYZJv+Ra7Qp1a6F7Jo5lxhMaWJ9fQJRtbnO5uttqFeUzTGZO8YePYA7swFgibgMA06viovbNDUGIWEgLueY3cOf6Wj2SL8b6aKgA=",
+      "mid": "759946304"
+    }
+  }
+}

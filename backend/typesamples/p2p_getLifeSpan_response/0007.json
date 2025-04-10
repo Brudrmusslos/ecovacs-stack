@@ -1,0 +1,42 @@
+{
+  "header": {
+    "pri": 1,
+    "tzm": 60,
+    "ts": "1744218188244",
+    "ver": "0.0.1",
+    "fwVer": "1.6.8",
+    "hwVer": "0.1.1",
+    "wkVer": "0.1.54"
+  },
+  "body": {
+    "code": 0,
+    "msg": "ok",
+    "data": [
+      {
+        "type": "sideBrush",
+        "left": 6911,
+        "total": 9000
+      },
+      {
+        "type": "brush",
+        "left": 15992,
+        "total": 18000
+      },
+      {
+        "type": "heap",
+        "left": 5192,
+        "total": 7200
+      },
+      {
+        "type": "unitCare",
+        "left": 0,
+        "total": 1800
+      },
+      {
+        "type": "dModule",
+        "left": 3600,
+        "total": 3600
+      }
+    ]
+  }
+}

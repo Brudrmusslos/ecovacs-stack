@@ -1,0 +1,26 @@
+{
+  "body": {
+    "data": {
+      "act": "add",
+      "hour": 2,
+      "enable": 1,
+      "repeat": "0000000",
+      "mid": "759946304",
+      "state": 0,
+      "trigger": "app",
+      "content": {
+        "jsonStr": "{\"content\":{\"type\":\"spotArea\",\"value\":\"0,2\"}}",
+        "name": "clean"
+      },
+      "minute": 5,
+      "sid": "17442148954433",
+      "bdTaskID": "1744214895443364"
+    }
+  },
+  "header": {
+    "pri": 2,
+    "tzm": 120,
+    "ts": 1744214895443,
+    "ver": "0.0.22"
+  }
+}

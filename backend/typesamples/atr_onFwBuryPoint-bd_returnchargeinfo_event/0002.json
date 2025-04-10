@@ -1,0 +1,26 @@
+{
+  "header": {
+    "pri": 1,
+    "tzm": 60,
+    "ts": "1744214767130",
+    "ver": "0.0.1",
+    "fwVer": "1.6.8",
+    "hwVer": "0.1.1",
+    "wkVer": "0.1.54"
+  },
+  "body": {
+    "gid": "G1744214767105",
+    "index": "0000000417",
+    "ts": "1744214767105",
+    "startType": 3,
+    "finishType": 0,
+    "planResult": 2,
+    "planElapsedTime": 4,
+    "totalElapsedTime": 20,
+    "jointElapsedTime": 16,
+    "detectMiddleCodeWhenPlanFinish": 2,
+    "detectOmniWallWhenPlanFinish": 0,
+    "detectCodeWhenPlanFinish": 2,
+    "chargingStatus": 3
+  }
+}

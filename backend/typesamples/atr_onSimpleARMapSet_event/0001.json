@@ -1,0 +1,50 @@
+{
+  "header": {
+    "pri": 1,
+    "tzm": 60,
+    "ts": "1744207854687",
+    "ver": "0.0.1",
+    "fwVer": "1.6.8",
+    "hwVer": "0.1.1",
+    "wkVer": "0.1.54"
+  },
+  "body": {
+    "data": {
+      "type": "ar",
+      "mid": "759946304",
+      "msid": "855817511",
+      "subsets": [
+        {
+          "name": "",
+          "mssid": "0",
+          "subtype": "1",
+          "totalCount": 0
+        },
+        {
+          "name": "",
+          "mssid": "1",
+          "subtype": "3",
+          "totalCount": 0
+        },
+        {
+          "name": "",
+          "mssid": "2",
+          "subtype": "0",
+          "totalCount": 0
+        },
+        {
+          "name": "",
+          "mssid": "3",
+          "subtype": "0",
+          "totalCount": 0
+        },
+        {
+          "name": "",
+          "mssid": "4",
+          "subtype": "6",
+          "totalCount": 0
+        }
+      ]
+    }
+  }
+}
